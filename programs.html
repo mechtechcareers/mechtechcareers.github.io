@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs — MechTech Careers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* ── PROGRAM TABS (white sticky bar) ── */
+  .prog-tabs { background: #FFFFFF; border-bottom: 2px solid #D1DCE8; position: sticky; top: 68px; z-index: 100; }
+  .prog-tabs-inner { max-width: 1140px; margin: 0 auto; padding: 0 64px; display: flex; overflow-x: auto; }
+  .prog-tab { font-size: 13.5px; font-weight: 500; color: #374151; padding: 16px 20px; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; transition: color 0.2s, border-color 0.2s; }
+  .prog-tab:hover { color: #0D1B2A; }
+  .prog-tab.active { color: #1557A0; border-bottom-color: #1557A0; font-weight: 700; }
+
+/* ── PROGRAM SECTION (light bg — same as wrap areas in about.html) ── */
+.prog-section { padding: 72px 0; border-bottom: 1px solid #D1DCE8; background: #F7F9FC; }
+.prog-section:nth-child(even) { background: #EEF4FA; }
+.prog-section:last-child { border-bottom: none; }
+.prog-inner { max-width: 1140px; margin: 0 auto; padding: 0 64px; }
+
+/* ── PROGRAM HEADER ── */
+.prog-header { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; margin-bottom: 40px; }
+.prog-icon-big { font-size: 40px; margin-bottom: 14px; }
+.prog-title { font-family: ‘Playfair Display’, serif; font-size: clamp(26px,3.5vw,36px); font-weight: 700; color: #0D1B2A; line-height: 1.2; margin-bottom: 10px; }
+.prog-tagline { font-size: 16px; color: #374151; line-height: 1.65; max-width: 600px; }
+.prog-badge { background: #EAF7F2; border: 1px solid #A8D8C8; border-radius: 40px; padding: 10px 20px; font-size: 13px; font-weight: 700; color: #0D3D2A; white-space: nowrap; }
+.prog-badge-gold { background: #FFF8E7; border: 1px solid #C9A84C; border-radius: 40px; padding: 10px 20px; font-size: 13px; font-weight: 700; color: #7A5C0A; white-space: nowrap; }
+
+/* ── ACCORDION (white card — same as skill-cards in about.html) ── */
+.accordion { display: flex; flex-direction: column; gap: 8px; }
+.acc-item { border: 1px solid #D1DCE8; border-radius: 8px; overflow: hidden; background: #FFFFFF; }
+.acc-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; cursor: pointer; user-select: none; transition: background 0.2s; }
+.acc-header:hover { background: #EEF4FA; }
+.acc-header.open { background: #EEF4FA; border-bottom: 1px solid #D1DCE8; }
+.acc-title { font-size: 15px; font-weight: 600; color: #0D1B2A; display: flex; align-items: center; gap: 12px; }
+.acc-icon { font-size: 18px; }
+.acc-arrow { font-size: 12px; color: #374151; transition: transform 0.3s; flex-shrink: 0; }
+.acc-header.open .acc-arrow { transform: rotate(180deg); }
+.acc-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.acc-body.open { max-height: 600px; }
+.acc-content { padding: 20px 24px 24px; }
+.acc-content p { font-size: 14.5px; color: #374151; line-height: 1.7; margin-bottom: 12px; }
+.acc-content p:last-child { margin-bottom: 0; }
+.acc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.acc-tag { font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; background: #EEF4FA; border: 1px solid #D1DCE8; color: #1A7BC4; padding: 4px 10px; border-radius: 3px; font-weight: 600; }
+
+/* ── OUTCOMES (tinted — same as gap items in about.html) ── */
+.outcomes { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
+.outcome { background: #EEF4FA; border-radius: 8px; padding: 20px; border-left: 3px solid #1557A0; }
+.outcome-icon { font-size: 20px; margin-bottom: 8px; }
+.outcome-title { font-size: 14px; font-weight: 700; color: #0D1B2A; margin-bottom: 4px; }
+.outcome-desc { font-size: 13px; color: #374151; line-height: 1.55; }
+
+/* ── CTA STRIP (dark navy) ── */
+.cta-strip { background: #0D1B2A; padding: 48px 64px; }
+.cta-strip-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.cta-strip h3 { font-family: ‘Playfair Display’, serif; font-size: 24px; color: #ffffff; font-weight: 700; }
+.cta-strip p { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+@media(max-width:960px) {
+.prog-tabs-inner { padding: 0 28px; }
+.prog-inner { padding: 0 28px; }
+.prog-header { grid-template-columns: 1fr; }
+.outcomes { grid-template-columns: 1fr 1fr; }
+.cta-strip { padding: 36px 28px; }
+.cta-strip-inner { flex-direction: column; text-align: center; }
+}
+@media(max-width:580px) { .outcomes { grid-template-columns: 1fr; } }
+</style>
+
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">Mech<span>Tech</span> Careers</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html" class="active">Programs</a>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </div>
+  <div class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About the Founder</a>
+  <a href="programs.html" class="active">Programs</a>
+  <a href="contact.html" class="nav-cta">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">What We Offer</div>
+    <h1>Five pathways to <em>industry readiness</em></h1>
+    <p>Each program is built around real industry expectations — taught by someone who has spent decades meeting those expectations at global OEMs.</p>
+  </div>
+</section>
+
+<!-- STICKY TABS -->
+
+<div class="prog-tabs">
+  <div class="prog-tabs-inner">
+    <button class="prog-tab active" onclick="jumpTo('mechanical-design',this)">Mechanical Design</button>
+    <button class="prog-tab" onclick="jumpTo('cad',this)">CAD Professional</button>
+    <button class="prog-tab" onclick="jumpTo('manufacturing',this)">Manufacturing</button>
+    <button class="prog-tab" onclick="jumpTo('quality',this)">Quality & Production</button>
+    <button class="prog-tab" onclick="jumpTo('mentorship',this)">Mentorship & Overseas</button>
+  </div>
+</div>
+
+<!-- PROGRAM 1 -->
+
+<section class="prog-section" id="mechanical-design">
+  <div class="prog-inner">
+    <div class="prog-header">
+      <div><div class="prog-icon-big">📐</div><div class="prog-title">Mechanical Design Program</div><div class="prog-tagline">Master the complete product design workflow — from initial concept through engineering drawings to production-ready components — the way OEMs actually do it.</div></div>
+      <div class="prog-badge">✦ Core Program</div>
+    </div>
+    <div class="accordion">
+      <div class="acc-item">
+        <div class="acc-header open" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">📋</span>What You Will Learn</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body open"><div class="acc-content">
+          <p>This program covers the full mechanical design workflow as practised in the automotive and manufacturing industry. You will start with engineering drawing fundamentals — creating and reading production drawings, applying GD&T correctly, and understanding how design intent is communicated to suppliers and manufacturers.</p>
+          <p>You will then move into component design — plastic parts, sheet metal, and structural components — with a strong emphasis on DFM, DFA, and tooling feasibility. Every exercise mirrors real project briefs from OEM environments.</p>
+          <p>The program concludes with packaging studies, master sections, gap and flushness analysis, and how to prepare components for proto builds and fitment trials.</p>
+          <div class="acc-tags"><span class="acc-tag">Engineering Drawing</span><span class="acc-tag">GD&T</span><span class="acc-tag">Plastic Design</span><span class="acc-tag">Sheet Metal</span><span class="acc-tag">DFM/DFA</span><span class="acc-tag">Packaging</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🏭</span>Where This Was Learned</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>This program draws directly from decades of design work at Volvo Eicher Commercial Vehicles and Force Motors Ltd. — where the instructor designed interior trims, seating systems, structural brackets, and ambulance variants for real vehicle platforms, including onsite work at Volvo Greensboro, USA.</p>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🎯</span>Who This Is For</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>Final year mechanical engineering students, fresh graduates, and diploma holders who want to go beyond textbook design and learn how industry-level product design is actually practised. Also suitable for early-career engineers who want to formalise and strengthen their design skills.</p>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">✅</span>What You Walk Away With</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>A portfolio of real design exercises — plastic components, sheet metal parts, and assembly drawings — that demonstrate industry-level design competency. You will also have the vocabulary, the workflow understanding, and the confidence to walk into a design role and contribute from week one.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="outcomes">
+      <div class="outcome"><div class="outcome-icon">💼</div><div class="outcome-title">Job-Ready Portfolio</div><div class="outcome-desc">Real design exercises that impress interviewers</div></div>
+      <div class="outcome"><div class="outcome-icon">🗣️</div><div class="outcome-title">Interview Confidence</div><div class="outcome-desc">Speak to design decisions with authority</div></div>
+      <div class="outcome"><div class="outcome-icon">⚙️</div><div class="outcome-title">OEM-Level Skills</div><div class="outcome-desc">Design the way Tier-1 companies actually do it</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 2 -->
+
+<section class="prog-section" id="cad">
+  <div class="prog-inner">
+    <div class="prog-header">
+      <div><div class="prog-icon-big">💻</div><div class="prog-title">CAD Professional Program</div><div class="prog-tagline">Master industry-standard CAD tools — SolidWorks, CATIA V5, and Creo — with the design intent, shortcuts, and professional workflows that companies expect you to already know.</div></div>
+      <div class="prog-badge">✦ High Demand</div>
+    </div>
+    <div class="accordion">
+      <div class="acc-item">
+        <div class="acc-header open" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">📋</span>What You Will Learn</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body open"><div class="acc-content">
+          <p>This program goes far beyond basic modelling tutorials. You will learn how to use CAD tools the way engineers in automotive and manufacturing companies use them every day — with proper parametric modelling discipline, surface modelling, assembly management, and production-ready detailing.</p>
+          <p>Coverage includes Part Design, Assembly Design, Generative Shape Design, Drafting and Detailing, and Sheet Metal Design. Special focus is placed on draft analysis, undercut detection, B-side feature creation, and engineering surface creation.</p>
+          <p>You will also understand how CAD data flows through PLM environments like ENOVIA or Windchill in an OEM context.</p>
+          <div class="acc-tags"><span class="acc-tag">SolidWorks</span><span class="acc-tag">CATIA V5</span><span class="acc-tag">Creo</span><span class="acc-tag">Surface Modelling</span><span class="acc-tag">Assembly Design</span><span class="acc-tag">PLM</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🏭</span>Where This Was Learned</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>The instructor spent decades using CATIA V5, Creo, and SolidWorks on live vehicle projects at Volvo Eicher and Force Motors — including onsite work at Volvo's global facility in Greensboro, USA, where PLM tools ENOVIA and KOLA were used daily alongside CAD workflows.</p>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">✅</span>What You Walk Away With</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>Practical proficiency in one or more industry-standard CAD tools, a portfolio of modelling exercises that demonstrate your capability, and an understanding of how CAD fits into the broader product development and PLM workflow of an OEM.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="outcomes">
+      <div class="outcome"><div class="outcome-icon">🖥️</div><div class="outcome-title">CAD Proficiency</div><div class="outcome-desc">Industry-standard tools at professional level</div></div>
+      <div class="outcome"><div class="outcome-icon">📁</div><div class="outcome-title">Modelling Portfolio</div><div class="outcome-desc">Real components to show in interviews</div></div>
+      <div class="outcome"><div class="outcome-icon">🔄</div><div class="outcome-title">PLM Awareness</div><div class="outcome-desc">Understand how CAD fits into OEM workflows</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 3 -->
+
+<section class="prog-section" id="manufacturing">
+  <div class="prog-inner">
+    <div class="prog-header">
+      <div><div class="prog-icon-big">🏗️</div><div class="prog-title">Manufacturing Industry Readiness</div><div class="prog-tagline">Bridge the gap between design and the factory floor — understand how parts are actually made, what manufacturing constraints look like, and how to design with production in mind.</div></div>
+      <div class="prog-badge">✦ Industry Essential</div>
+    </div>
+    <div class="accordion">
+      <div class="acc-item">
+        <div class="acc-header open" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">📋</span>What You Will Learn</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body open"><div class="acc-content">
+          <p>This program covers manufacturing processes and their direct implications for design. You will learn plastics (injection moulding, vacuum forming, FRP), sheet metal fabrication, composites, and prototyping methods.</p>
+          <p>The core of the program is DFM, DFA, DFS, and DFAM — methodologies used to reduce cost, improve quality, and make products easier to produce and assemble.</p>
+          <p>You will also gain exposure to advanced materials like carbon fibre and bio-based composites from NASA MUREP-level research experience.</p>
+          <div class="acc-tags"><span class="acc-tag">Injection Moulding</span><span class="acc-tag">Sheet Metal</span><span class="acc-tag">FRP</span><span class="acc-tag">Composites</span><span class="acc-tag">DFM</span><span class="acc-tag">DFA</span><span class="acc-tag">DFAM</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🏭</span>Where This Was Learned</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>Live production environments at Force Motors and Volvo Eicher, combined with NASA MUREP-funded composite structures research at the University of North Texas — covering carbon fibre fabrication, foam infusion, and mechanical testing.</p>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">✅</span>What You Walk Away With</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>A manufacturing mindset that makes you a better designer — you will think about how parts are made from the moment you start sketching. This is the knowledge that makes senior engineers trust fresh hires, and it is almost never taught in college.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="outcomes">
+      <div class="outcome"><div class="outcome-icon">🔧</div><div class="outcome-title">Manufacturing Mindset</div><div class="outcome-desc">Design with production in mind from day one</div></div>
+      <div class="outcome"><div class="outcome-icon">💰</div><div class="outcome-title">Cost Reduction Skills</div><div class="outcome-desc">DFM/DFA knowledge companies value highly</div></div>
+      <div class="outcome"><div class="outcome-icon">🚀</div><div class="outcome-title">Advanced Materials Exposure</div><div class="outcome-desc">Composites and next-gen manufacturing knowledge</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 4 -->
+
+<section class="prog-section" id="quality">
+  <div class="prog-inner">
+    <div class="prog-header">
+      <div><div class="prog-icon-big">🔍</div><div class="prog-title">Production & Quality Engineering</div><div class="prog-tagline">Learn the validation, documentation, and quality processes that OEMs expect engineers to understand — the part of the job that colleges almost never teach.</div></div>
+      <div class="prog-badge">✦ OEM Must-Have</div>
+    </div>
+    <div class="accordion">
+      <div class="acc-item">
+        <div class="acc-header open" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">📋</span>What You Will Learn</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body open"><div class="acc-content">
+          <p>This program covers the full validation and quality cycle that components go through before reaching production. You will learn how to prepare Design Verification Plans (DVPs), Statements of Requirements (SORs), and how to manage proto builds, fitment trials, and sign-off processes.</p>
+          <p>Applied GD&T is a major focus — reading and interpreting production drawings the way suppliers and quality engineers do on the job. You will work through real drawing examples and understand how tolerancing decisions affect manufacturing cost and quality.</p>
+          <p>Homologation requirements, regulatory standards (AIS norms), and benchmarking practices are also covered.</p>
+          <div class="acc-tags"><span class="acc-tag">DVP</span><span class="acc-tag">SOR</span><span class="acc-tag">GD&T Applied</span><span class="acc-tag">Fitment Trials</span><span class="acc-tag">Homologation</span><span class="acc-tag">AIS Norms</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🏭</span>Where This Was Learned</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>Years of DVP and SOR preparation, fitment trial management, and homologation sign-offs at Force Motors and Volvo Eicher — covering M1/M2 passenger vehicles, commercial trucks, and government-specification ambulance variants.</p>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">✅</span>What You Walk Away With</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>The ability to read and create production-level documentation, understand the validation cycle from design to sign-off, and speak confidently in interviews about quality and verification processes. Most fresh engineers take 2 years to learn this on the job — you will know it before you start.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="outcomes">
+      <div class="outcome"><div class="outcome-icon">📄</div><div class="outcome-title">Documentation Skills</div><div class="outcome-desc">DVP, SOR, and validation processes</div></div>
+      <div class="outcome"><div class="outcome-icon">📏</div><div class="outcome-title">Applied GD&T</div><div class="outcome-desc">Read and create production drawings fluently</div></div>
+      <div class="outcome"><div class="outcome-icon">✅</div><div class="outcome-title">Sign-Off Readiness</div><div class="outcome-desc">Understand the full proto-to-production cycle</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 5 -->
+
+<section class="prog-section" id="mentorship">
+  <div class="prog-inner">
+    <div class="prog-header">
+      <div><div class="prog-icon-big">🧭</div><div class="prog-title">Career Mentorship & Overseas Guidance</div><div class="prog-tagline">A roadmap beyond the local job market — guidance on overseas careers, funded research, international MS programs, and publications from someone who has personally navigated all of them.</div></div>
+      <div class="prog-badge-gold">✦ Unique to MechTech</div>
+    </div>
+    <div class="accordion">
+      <div class="acc-item">
+        <div class="acc-header open" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🌍</span>Overseas Job Opportunities</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body open"><div class="acc-content">
+          <p>Having worked onsite at Volvo in the USA and studied as an international professional in the US engineering ecosystem, the founder understands what overseas employers actually look for — and how an Indian mechanical engineer needs to position their skills and profile differently for international applications.</p>
+          <p>This guidance covers target markets (Middle East, USA, Europe), what each market values, how to adapt your resume and portfolio, and how to build the credibility signals overseas employers respond to.</p>
+          <div class="acc-tags"><span class="acc-tag">Middle East</span><span class="acc-tag">USA</span><span class="acc-tag">Europe</span><span class="acc-tag">Resume for Global Market</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🎓</span>International MS Programs</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>Navigating an MS abroad — university shortlisting, SOP writing, funding options, scholarship applications, and the realities of life as an international engineering student — was lived first-hand at the University of North Texas. Guidance here comes from direct experience, not a consultancy script.</p>
+          <div class="acc-tags"><span class="acc-tag">MS Admissions</span><span class="acc-tag">SOP Writing</span><span class="acc-tag">Scholarships</span><span class="acc-tag">University Shortlisting</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🔬</span>Funded Research Projects</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>The founder worked on a NASA MUREP-funded project — a federally sponsored research grant — while completing a Master's at UNT. That experience provides real, practical guidance on how to identify funded research opportunities, how to approach professors, and how to position yourself as a strong candidate for assistantships and grants.</p>
+          <div class="acc-tags"><span class="acc-tag">NASA MUREP</span><span class="acc-tag">Research Grants</span><span class="acc-tag">Assistantships</span><span class="acc-tag">DST/SERB</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">📄</span>Research Collaborations & Publications</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>With international conference presentations and a co-authored publication currently under review, the founder can guide students interested in building a research profile — from finding collaboration opportunities to writing and submitting papers.</p>
+          <div class="acc-tags"><span class="acc-tag">Publications</span><span class="acc-tag">Conference Presentations</span><span class="acc-tag">Research Collaborations</span></div>
+        </div></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-title"><span class="acc-icon">🗺️</span>Personal Career Roadmapping</div><span class="acc-arrow">▼</span></div>
+        <div class="acc-body"><div class="acc-content">
+          <p>Whether your goal is a local design role, an overseas job, an MS program, or a research career — the founder can sit down with you and map a realistic, specific path from where you are today to where you want to go. This is personalised mentorship drawing on decades of real industry experience and the founder's own journey from India to global OEMs to US research institutions.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="outcomes">
+      <div class="outcome"><div class="outcome-icon">🌍</div><div class="outcome-title">Global Career Clarity</div><div class="outcome-desc">Know exactly how to position yourself internationally</div></div>
+      <div class="outcome"><div class="outcome-icon">🎓</div><div class="outcome-title">MS Readiness</div><div class="outcome-desc">A real plan for studying abroad, not a wish list</div></div>
+      <div class="outcome"><div class="outcome-icon">🔬</div><div class="outcome-title">Research Pathway</div><div class="outcome-desc">Know how to find and access funded opportunities</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <div><h3>Ready to get started?</h3><p>Reach out and we'll help you choose the right program for your goals.</p></div>
+    <a href="contact.html" class="btn-gold">Contact Us →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Mech<span>Tech</span> Careers</div><p class="footer-desc">Industry-ready mechanical engineering training — taught from real experience, designed to open real doors.</p></div>
+    <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About the Founder</a><a href="programs.html">Programs</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="mailto:msam.abass@gmail.com">msam.abass@gmail.com</a><a href="https://linkedin.com/in/sameerabass" target="_blank">LinkedIn</a><a href="contact.html">Send a Message</a></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 MechTech Careers · Founded by Sameer Abass</div><div class="footer-copy">mechtechcareers.github.io</div></div>
+</footer>
+
+<script>
+  window.addEventListener('scroll',()=>{ document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20); });
+  function toggleNav(){ document.getElementById('navToggle').classList.toggle('open'); document.getElementById('navMobile').classList.toggle('open'); }
+  document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>{ document.getElementById('navToggle').classList.remove('open'); document.getElementById('navMobile').classList.remove('open'); }));
+  function toggleAcc(header){ const body=header.nextElementSibling; const isOpen=header.classList.contains('open'); header.classList.toggle('open',!isOpen); body.classList.toggle('open',!isOpen); }
+  function jumpTo(id,btn){ const el=document.getElementById(id); if(el){ const y=el.getBoundingClientRect().top+window.scrollY-140; window.scrollTo({top:y,behavior:'smooth'}); } document.querySelectorAll('.prog-tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); }
+  const sections=['mechanical-design','cad','manufacturing','quality','mentorship'];
+  window.addEventListener('scroll',()=>{ let current=''; sections.forEach(id=>{ const el=document.getElementById(id); if(el&&window.scrollY>=el.offsetTop-160) current=id; }); document.querySelectorAll('.prog-tab').forEach((tab,i)=>{ tab.classList.toggle('active',sections[i]===current); }); });
+</script>
+
+</body>
+</html>

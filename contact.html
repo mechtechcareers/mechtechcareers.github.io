@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — MechTech Careers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nav.css">
+<style>
+  /* ── CONTACT GRID ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+
+/* ── CONTACT CARDS (white — same as white-card in about.html) ── */
+.contact-cards { display: flex; flex-direction: column; gap: 14px; }
+.contact-card { background: #FFFFFF; border: 1px solid #D1DCE8; border-radius: 10px; padding: 22px 22px; display: flex; align-items: flex-start; gap: 16px; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; border-left: 4px solid #D1DCE8; }
+.contact-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.contact-card.whatsapp { border-left-color: #25D366; }
+.contact-card.email    { border-left-color: #1557A0; }
+.contact-card.phone    { border-left-color: #1A7BC4; }
+.contact-card.linkedin { border-left-color: #0077B5; }
+.cc-icon { width: 42px; height: 42px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: #EEF4FA; }
+.cc-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: #374151; margin-bottom: 3px; }
+.cc-value { font-size: 15px; font-weight: 700; color: #0D1B2A; margin-bottom: 2px; }
+.cc-sub { font-size: 12.5px; color: #374151; }
+
+/* ── RESPONSE NOTE (green callout — same as .ymfu in about.html) ── */
+.response-note { background: #EAF7F2; border: 1px solid #A8D8C8; border-radius: 8px; padding: 14px 18px; display: flex; align-items: flex-start; gap: 12px; margin-top: 12px; }
+.response-note p { font-size: 13.5px; color: #0D3D2A; line-height: 1.55; }
+.response-note strong { color: #0D3D2A; }
+
+/* ── FORM CARD (white — same as .skill-card in about.html) ── */
+.form-card { background: #FFFFFF; border: 1px solid #D1DCE8; border-radius: 10px; padding: 40px 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.form-title { font-family: ‘Playfair Display’, serif; font-size: 24px; font-weight: 700; color: #0D1B2A; margin-bottom: 6px; }
+.form-sub { font-size: 14px; color: #374151; margin-bottom: 28px; line-height: 1.6; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.form-group { margin-bottom: 20px; }
+label { display: block; font-size: 13px; font-weight: 700; color: #0D1B2A; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 12px 14px; border: 1.5px solid #D1DCE8; border-radius: 6px; font-size: 14.5px; font-family: ‘DM Sans’, sans-serif; color: #111827; background: #F7F9FC; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+input:focus, select:focus, textarea:focus { border-color: #1557A0; box-shadow: 0 0 0 3px rgba(21,87,160,0.08); background: #FFFFFF; }
+textarea { resize: vertical; min-height: 120px; }
+select { cursor: pointer; }
+.form-btn { width: 100%; background: #C9A84C; color: #0D1B2A; border: none; padding: 15px; font-size: 15px; font-weight: 700; border-radius: 6px; cursor: pointer; font-family: ‘DM Sans’, sans-serif; transition: background 0.2s, transform 0.2s; margin-top: 8px; }
+.form-btn:hover { background: #dbb95a; transform: translateY(-1px); }
+.form-note { font-size: 12px; color: #374151; text-align: center; margin-top: 12px; line-height: 1.5; }
+.form-success { display: none; background: #EAF7F2; border: 1px solid #A8D8C8; border-radius: 8px; padding: 24px; text-align: center; margin-top: 16px; }
+.form-success.show { display: block; }
+.form-success strong { font-size: 16px; display: block; margin-bottom: 8px; color: #0D1B2A; }
+.form-success p { font-size: 14.5px; color: #0D3D2A; line-height: 1.6; }
+
+/* ── FAQ (tinted — same as .gap-bg in about.html) ── */
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 40px; }
+.faq-item { background: #FFFFFF; border: 1px solid #D1DCE8; border-radius: 8px; overflow: hidden; }
+.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; transition: background 0.2s; user-select: none; }
+.faq-q:hover { background: #EEF4FA; }
+.faq-q.open { background: #EEF4FA; border-bottom: 1px solid #D1DCE8; }
+.faq-q span { font-size: 14.5px; font-weight: 700; color: #0D1B2A; line-height: 1.4; }
+.faq-arrow { font-size: 11px; color: #374151; transition: transform 0.3s; flex-shrink: 0; margin-left: 12px; }
+.faq-q.open .faq-arrow { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-a.open { max-height: 300px; }
+.faq-a-inner { padding: 14px 20px 18px; font-size: 14px; color: #374151; line-height: 1.7; }
+
+@media(max-width:960px) {
+.contact-grid { grid-template-columns: 1fr; }
+.form-card { padding: 28px 22px; }
+.form-row { grid-template-columns: 1fr; }
+.faq-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">Mech<span>Tech</span> Careers</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html" class="active nav-cta">Contact Us</a>
+  </div>
+  <div class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About the Founder</a>
+  <a href="programs.html">Programs</a>
+  <a href="contact.html" class="active nav-cta">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Get in Touch</div>
+    <h1>Let's talk about <em>your career goals.</em></h1>
+    <p>Whether you have a question about a program, want to discuss your goals, or are ready to enroll — reach out directly. Every message gets a personal response.</p>
+  </div>
+</section>
+
+<!-- CONTACT + FORM -->
+
+<section class="section-light">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Reach Out</div>
+        <h2 class="sec-title">Contact <em>directly</em></h2>
+        <p style="font-size:15px;color:#374151;margin-bottom:28px;line-height:1.7;">The fastest way to get a response is WhatsApp. For detailed questions, use the form or email.</p>
+        <div class="contact-cards">
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="contact-card whatsapp">
+            <div class="cc-icon">💬</div>
+            <div><div class="cc-label">WhatsApp</div><div class="cc-value">+91 XXXXX XXXXX</div><div class="cc-sub">Tap to open WhatsApp chat</div></div>
+          </a>
+          <a href="mailto:msam.abass@gmail.com" class="contact-card email">
+            <div class="cc-icon">✉️</div>
+            <div><div class="cc-label">Email</div><div class="cc-value">msam.abass@gmail.com</div><div class="cc-sub">For detailed questions and program enquiries</div></div>
+          </a>
+          <a href="tel:+91XXXXXXXXXX" class="contact-card phone">
+            <div class="cc-icon">📞</div>
+            <div><div class="cc-label">Phone</div><div class="cc-value">+91 XXXXX XXXXX</div><div class="cc-sub">Available Mon–Sat, 9am–7pm IST</div></div>
+          </a>
+          <a href="https://linkedin.com/in/sameerabass" target="_blank" class="contact-card linkedin">
+            <div class="cc-icon">🔗</div>
+            <div><div class="cc-label">LinkedIn</div><div class="cc-value">linkedin.com/in/sameerabass</div><div class="cc-sub">Connect and follow MechTech updates</div></div>
+          </a>
+        </div>
+        <div class="response-note">
+          <span style="font-size:20px">⚡</span>
+          <p><strong>Typical response time: within 2 hours</strong><br>All enquiries receive a personal reply — not an automated message.</p>
+        </div>
+      </div>
+
+```
+  <div class="form-card">
+    <div class="form-title">Send an Enquiry</div>
+    <div class="form-sub">Fill in the form below and we'll get back to you with everything you need to know about the right program for your goals.</div>
+    <form id="enquiryForm" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div><label for="fname">First Name *</label><input type="text" id="fname" placeholder="Your first name" required></div>
+        <div><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Your last name"></div>
+      </div>
+      <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" placeholder="your@email.com" required></div>
+      <div class="form-group"><label for="phone">WhatsApp / Phone Number</label><input type="tel" id="phone" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="form-group">
+        <label for="program">Program of Interest *</label>
+        <select id="program" required>
+          <option value="" disabled selected>Select a program...</option>
+          <option>Mechanical Design Program</option>
+          <option>CAD Professional Program</option>
+          <option>Manufacturing Industry Readiness</option>
+          <option>Production & Quality Engineering</option>
+          <option>Career Mentorship & Overseas Guidance</option>
+          <option>Multiple programs / Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="background">Your Current Background *</label>
+        <select id="background" required>
+          <option value="" disabled selected>Select your background...</option>
+          <option>Final Year Engineering Student</option>
+          <option>Fresh Graduate (0–1 year)</option>
+          <option>Diploma Holder</option>
+          <option>Working Professional (looking to upskill)</option>
+          <option>Aspiring for Overseas / MS / Research</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="message">Your Message / Goals</label><textarea id="message" placeholder="Tell us about your current situation, what you're looking to achieve, and any specific questions you have..."></textarea></div>
+      <button type="submit" class="form-btn">Send Enquiry →</button>
+      <div class="form-note">Your details are kept private and will only be used to respond to your enquiry.</div>
+    </form>
+    <div class="form-success" id="formSuccess">
+      <strong>✅ Enquiry Received!</strong>
+      <p>Thank you for reaching out. You'll receive a personal response within 2 hours. In the meantime, connect on <a href="https://linkedin.com/in/sameerabass" style="color:#1557A0;font-weight:600">LinkedIn</a>.</p>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+
+<section class="section-tint">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="sec-title">Common <em>questions</em></h2>
+    <p class="sec-sub">Quick answers to the questions most students ask before enrolling.</p>
+    <div class="faq-grid">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are the programs online or in-person?</span><span class="faq-arrow">▼</span></div><div class="faq-a"><div class="faq-a-inner">Both options are available. In-person sessions are held at our training centre, and online programs are conducted via live sessions with recordings available. Contact us to discuss which format suits you.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What software will I need?</span><span class="faq-arrow">▼</span></div><div class="faq-a"><div class="faq-a-inner">For CAD programs, you will need access to SolidWorks, CATIA V5, or Creo. We will guide you on obtaining student licenses or trial versions. For other programs, standard tools like MS Office are sufficient.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Do I get a certificate at the end?</span><span class="faq-arrow">▼</span></div><div class="faq-a"><div class="faq-a-inner">Yes — a MechTech Careers completion certificate is issued for each program. More importantly, you will leave with a portfolio of real work that is far more valuable in interviews than a certificate alone.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I enroll in multiple programs?</span><span class="faq-arrow">▼</span></div><div class="faq-a"><div class="faq-a-inner">Absolutely — many students combine programs like Mechanical Design + CAD Professional, or Manufacturing + Quality. We can create a custom learning path based on your goals. Just mention it in your enquiry.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What if I am already working?</span><span class="faq-arrow">▼</span></div><div class="faq-a"><div class="faq-a-inner">Programs are designed to be flexible for working professionals. Weekend batches and evening sessions are available. Many working engineers join to qualify for senior roles or overseas opportunities.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How is this different from other CAD institutes?</span><span class="faq-arrow">▼</span></div><div class="faq-a"><div class="faq-a-inner">Most training institutes teach software. MechTech teaches how industry actually uses that software — with real design intent, OEM-level workflows, and a founder who spent decades doing this at Volvo and Force Motors. The difference shows up in interviews.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand">Mech<span>Tech</span> Careers</div><p class="footer-desc">Industry-ready mechanical engineering training — taught from real experience, designed to open real doors.</p></div>
+    <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About the Founder</a><a href="programs.html">Programs</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="mailto:msam.abass@gmail.com">msam.abass@gmail.com</a><a href="https://linkedin.com/in/sameerabass" target="_blank">LinkedIn</a><a href="contact.html">Send a Message</a></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 MechTech Careers · Founded by Sameer Abass</div><div class="footer-copy">mechtechcareers.github.io</div></div>
+</footer>
+
+<script>
+  window.addEventListener('scroll',()=>{ document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20); });
+  function toggleNav(){ document.getElementById('navToggle').classList.toggle('open'); document.getElementById('navMobile').classList.toggle('open'); }
+  document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>{ document.getElementById('navToggle').classList.remove('open'); document.getElementById('navMobile').classList.remove('open'); }));
+  function toggleFaq(el){ el.classList.toggle('open'); el.nextElementSibling.classList.toggle('open'); }
+  function submitForm(e){
+    e.preventDefault();
+    const name=document.getElementById('fname').value+' '+document.getElementById('lname').value;
+    const email=document.getElementById('email').value;
+    const phone=document.getElementById('phone').value;
+    const program=document.getElementById('program').value;
+    const background=document.getElementById('background').value;
+    const message=document.getElementById('message').value;
+    const waMsg=encodeURIComponent(`*New MechTech Enquiry*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nProgram: ${program}\nBackground: ${background}\n\nMessage: ${message}`);
+    window.open(`https://wa.me/91XXXXXXXXXX?text=${waMsg}`,'_blank');
+    document.getElementById('enquiryForm').style.display='none';
+    document.getElementById('formSuccess').classList.add('show');
+  }
+</script>
+
+</body>
+</html>
