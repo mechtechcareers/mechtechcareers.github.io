@@ -8,8 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="nav.css">
 <style>
-  /* HERO — dark navy, same as index.html */
-  .hero{background:#0D1B2A;padding:80px 64px 0;overflow:hidden;position:relative}
+  /* HERO */
+  .hero{background:#0D1B2A;padding:80px 64px 0;overflow:hidden}
   .hero-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:end;position:relative;z-index:2}
   .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:600;margin-bottom:20px;animation:fadeUp 0.6s ease both}
   .hero-eyebrow::before{content:'';width:22px;height:2px;background:#C9A84C}
@@ -21,26 +21,24 @@
   .stats-row{display:flex;gap:36px;padding-bottom:48px;flex-wrap:wrap;animation:fadeUp 0.6s 0.4s ease both}
   .stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#C9A84C;line-height:1}
   .stat-lbl{font-size:11px;color:rgba(255,255,255,0.80);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+  .hero-panel{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-bottom:none;border-radius:8px 8px 0 0;padding:32px 28px 36px;animation:fadeUp 0.6s 0.45s ease both}
+  .panel-avatar{width:100%;height:240px;border-radius:6px 6px 0 0;overflow:hidden;margin-bottom:20px;border:2px solid rgba(201,168,76,0.4)}
+  .panel-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .panel-avatar-fallback{width:100%;height:100%;background:linear-gradient(135deg,#1557A0,#0D3A6A);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff}
+  .panel-name{font-family:'Playfair Display',serif;font-size:18px;color:#ffffff;font-weight:700}
+  .panel-title{font-size:12px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .panel-cred{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+  .p-icon{width:26px;height:26px;border-radius:4px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;margin-top:1px}
+  .p-text{font-size:12.5px;color:rgba(255,255,255,0.90);line-height:1.45}
 
-/* Hero panel — dark card */
-.hero-panel{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-bottom:none;border-radius:8px 8px 0 0;padding:32px 28px 36px;animation:fadeUp 0.6s 0.45s ease both}
-.panel-avatar{width:100%;height:240px;border-radius:6px 6px 0 0;overflow:hidden;margin-bottom:20px;border:2px solid rgba(201,168,76,0.4)}
-.panel-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.panel-avatar-fallback{width:100%;height:100%;background:linear-gradient(135deg,#1557A0,#0D3A6A);display:flex;align-items:center;justify-content:center;font-family:‘Playfair Display’,serif;font-size:32px;font-weight:700;color:#fff}
-.panel-name{font-family:‘Playfair Display’,serif;font-size:18px;color:#ffffff;font-weight:700}
-.panel-title{font-size:12px;color:rgba(255,255,255,0.75);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1)}
-.panel-cred{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
-.p-icon{width:26px;height:26px;border-radius:4px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;margin-top:1px}
-.p-text{font-size:12.5px;color:rgba(255,255,255,0.90);line-height:1.45}
-
-/* Bridge banner — blue, same as index.html */
+/* BRIDGE */
 .bridge-banner{background:#1557A0;padding:26px 64px}
 .bridge-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:20px}
 .bridge-icon{font-size:26px;flex-shrink:0}
 .bridge-text{font-size:15.5px;color:#ffffff;line-height:1.6}
 .bridge-text strong{color:#C9A84C}
 
-/* Journey — light bg, dark text */
+/* JOURNEY */
 .journey-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .story-body p{font-size:15.5px;line-height:1.8;color:#374151;margin-bottom:16px}
 .story-body strong{color:#0D1B2A}
@@ -53,7 +51,7 @@
 .founder-quote p{font-family:‘Playfair Display’,serif;font-size:17px;font-style:italic;color:#3D2800;line-height:1.65}
 .founder-quote cite{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A5C0A;margin-top:12px;font-style:normal;font-weight:600}
 
-/* Timeline */
+/* TIMELINE */
 .timeline{display:flex;flex-direction:column}
 .tl-item{display:grid;grid-template-columns:82px 26px 1fr;padding-bottom:28px}
 .tl-item:last-child{padding-bottom:0}
@@ -69,39 +67,7 @@
 .ymfu-tag{display:inline-flex;align-items:center;gap:6px;background:#EAF7F2;border:1px solid #A8D8C8;color:#0D3D2A;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-top:8px;margin-bottom:4px}
 .ymfu-text{font-size:13px;color:#0D3D2A;line-height:1.55;font-style:italic;padding-left:4px}
 
-/* XB section — dark navy */
-.xb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
-.xb-card{background:rgba(255,255,255,0.04);padding:32px 24px;border-top:3px solid transparent;transition:background 0.3s,border-color 0.3s}
-.xb-card:hover{background:rgba(255,255,255,0.07);border-top-color:#C9A84C}
-.xb-exp-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:600;margin-bottom:6px}
-.xb-exp-text{font-size:14px;font-weight:700;color:#ffffff;line-height:1.3;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.1)}
-.xb-arrow{font-size:16px;color:#C9A84C;margin-bottom:8px;display:block}
-.xb-benefit-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#C9A84C;font-weight:600;margin-bottom:6px}
-.xb-benefit-text{font-size:13.5px;color:rgba(255,255,255,0.90);line-height:1.6}
-
-/* Gap section — tinted bg */
-.gap-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.gap-col h3{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;color:#0D1B2A;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #D1DCE8}
-.gap-item{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid #D1DCE8}
-.gap-item:last-child{border-bottom:none}
-.gap-dot-red{width:8px;height:8px;border-radius:50%;background:#DC2626;flex-shrink:0;margin-top:6px}
-.gap-dot-green{width:8px;height:8px;border-radius:50%;background:#1A7A5E;flex-shrink:0;margin-top:6px}
-.gap-item-text{font-size:14px;color:#374151;line-height:1.55}
-.gap-item-text strong{color:#0D1B2A;display:block;font-size:14px;margin-bottom:2px}
-
-/* Skills — light bg, white cards */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.skill-card{background:#FFFFFF;border:1px solid #D1DCE8;border-top:3px solid #1557A0;border-radius:0 0 6px 6px;padding:26px 22px;transition:border-top-color 0.3s,box-shadow 0.3s,transform 0.3s}
-.skill-card:hover{border-top-color:#B8860B;box-shadow:0 6px 20px rgba(0,0,0,0.07);transform:translateY(-3px)}
-.sk-icon{font-size:24px;margin-bottom:12px}
-.sk-title{font-size:15px;font-weight:700;color:#0D1B2A;margin-bottom:6px}
-.sk-origin{font-size:12px;color:#1A7BC4;font-style:italic;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #D1DCE8}
-.sk-desc{font-size:13px;color:#374151;line-height:1.6;margin-bottom:12px}
-.sk-benefit{background:#EAF7F2;border-left:3px solid #1A7A5E;padding:8px 10px;font-size:12px;color:#0D3D2A;line-height:1.5;border-radius:0 4px 4px 0}
-.sk-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
-.sk-tag{font-size:10px;letter-spacing:0.8px;text-transform:uppercase;background:#EEF4FA;border:1px solid #D1DCE8;color:#1A7BC4;padding:3px 7px;border-radius:3px;font-weight:600}
-
-/* Awards — light bg, white cards */
+/* AWARDS */
 .awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .award-card{background:#FFFFFF;border:1px solid #D1DCE8;border-bottom:3px solid #B8860B;padding:22px 16px;text-align:center;border-radius:6px 6px 0 0;transition:box-shadow 0.3s,transform 0.3s}
 .award-card:hover{box-shadow:0 6px 18px rgba(0,0,0,0.08);transform:translateY(-2px)}
@@ -109,62 +75,29 @@
 .award-title{font-size:13px;font-weight:700;color:#0D1B2A;margin-bottom:5px;line-height:1.3}
 .award-org{font-size:11px;color:#374151;line-height:1.4}
 
-/* Testimonial — tinted bg */
-.test-box{background:#FFFFFF;border:1px dashed #D1DCE8;border-radius:8px;padding:36px;text-align:center}
-.t-icon{font-size:32px;margin-bottom:12px}
-.test-box p{font-size:15px;color:#374151;line-height:1.6}
-.test-box strong{color:#0D1B2A}
-
-/* Beyond borders — tinted bg, white cards */
-.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.exp-card{background:#FFFFFF;border:1px solid #D1DCE8;border-top:3px solid #1557A0;border-radius:0 0 6px 6px;padding:28px 24px;transition:border-top-color 0.3s,box-shadow 0.3s,transform 0.3s}
-.exp-card:hover{border-top-color:#B8860B;box-shadow:0 8px 24px rgba(0,0,0,0.08);transform:translateY(-3px)}
-.exp-icon{font-size:26px;margin-bottom:14px}
-.exp-title{font-size:15px;font-weight:700;color:#0D1B2A;margin-bottom:8px}
-.exp-desc{font-size:13px;color:#374151;line-height:1.65;margin-bottom:14px}
-.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
-.exp-tag{font-size:10px;letter-spacing:0.8px;text-transform:uppercase;background:#EEF4FA;border:1px solid #D1DCE8;color:#1A7BC4;padding:3px 8px;border-radius:3px;font-weight:600}
-
-/* CTA — dark navy */
+/* CTA */
 .cta-banner{background:#0D1B2A;padding:80px 64px;text-align:center;position:relative;overflow:hidden}
 .cta-banner::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(21,87,160,0.35),transparent 65%);pointer-events:none}
 .cta-banner h2{font-family:‘Playfair Display’,serif;font-size:clamp(26px,4vw,40px);color:#ffffff;margin-bottom:16px;position:relative}
 .cta-banner p{font-size:16px;color:rgba(255,255,255,0.85);max-width:520px;margin:0 auto 36px;line-height:1.7;position:relative}
-.cta-chips{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:36px;position:relative}
-.cta-chip{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:40px;padding:8px 20px;font-size:13px;color:rgba(255,255,255,0.90)}
 
 @media(max-width:960px){
-.bridge-banner{padding:22px 28px}
-.hero{padding:56px 28px 0}
-.hero-grid,.journey-grid,.gap-grid{grid-template-columns:1fr}
-.hero-panel{display:none}
-.xb-grid,.skills-grid,.exp-grid{grid-template-columns:1fr 1fr}
-.awards-grid{grid-template-columns:1fr 1fr}
-.cta-banner{padding:64px 28px}
+.bridge-banner{padding:22px 28px}.hero{padding:56px 28px 0}
+.hero-grid,.journey-grid{grid-template-columns:1fr}.hero-panel{display:none}
+.awards-grid{grid-template-columns:1fr 1fr}.cta-banner{padding:64px 28px}
 }
-@media(max-width:580px){
-.xb-grid,.skills-grid,.exp-grid,.awards-grid{grid-template-columns:1fr}
-}
+@media(max-width:580px){.awards-grid{grid-template-columns:1fr 1fr}}
 </style>
 
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-brand">Mech<span>Tech</span> Careers</a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="contact.html" class="nav-cta">Contact Us</a>
-  </div>
+  <div class="nav-links"><a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="programs.html">Programs</a><a href="contact.html" class="nav-cta">Contact Us</a></div>
   <div class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="index.html">Home</a>
-  <a href="about.html" class="active">About the Founder</a>
-  <a href="programs.html">Programs</a>
-  <a href="contact.html" class="nav-cta">Contact Us</a>
+  <a href="index.html">Home</a><a href="about.html" class="active">About the Founder</a><a href="programs.html">Programs</a><a href="contact.html" class="nav-cta">Contact Us</a>
 </div>
 
 <!-- HERO -->
@@ -208,7 +141,7 @@
   </div>
 </div>
 
-<!-- JOURNEY -->
+<!-- THE JOURNEY — unique to this page -->
 
 <section class="section-light">
   <div class="wrap">
@@ -235,6 +168,7 @@
         <div class="tl-item"><div class="tl-year">2023–25</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-company">University of North Texas, USA</div><div class="tl-role">M.S. + NASA Research</div><div class="tl-desc">NASA MUREP composites project; LCA research; Best Presentation at Intel 2024.</div><div class="ymfu-tag">✦ For You</div><div class="ymfu-text">First-hand knowledge of funded research, MS admissions, and international networks — guidance no typical training institute can offer.</div></div></div>
         <div class="tl-item"><div class="tl-year">2016–20</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-company">Force Motors Ltd., Pune</div><div class="tl-role">Junior Engineer Manager</div><div class="tl-desc">Led full product development — GA layout to ambulance variants to production sign-off.</div><div class="ymfu-tag">✦ For You</div><div class="ymfu-text">You learn complete product development cycles, not just isolated CAD skills.</div></div></div>
         <div class="tl-item"><div class="tl-year">2011–16</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-company">Volvo Eicher Commercial Vehicles</div><div class="tl-role">Design Engineer</div><div class="tl-desc">Volvo &amp; Mack truck interiors; cost-reduction programs; onsite at Volvo USA.</div><div class="ymfu-tag">✦ For You</div><div class="ymfu-text">OEM-level design standards and genuine insight into what overseas employers in the USA, Europe, and Middle East look for.</div></div></div>
+        <div class="tl-item"><div class="tl-year">2010–11</div><div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body"><div class="tl-company">B.E. Automobile Engineering</div><div class="tl-role">Anna University, Chennai</div><div class="tl-desc">Foundation in mechanical and automobile engineering design principles.</div><div class="ymfu-tag">✦ For You</div><div class="ymfu-text">The founder started exactly where you are — he knows this journey from its very beginning.</div></div></div>
       </div>
     </div>
   </div>
@@ -242,75 +176,7 @@
 
 <div class="divider"></div>
 
-<!-- EXPERIENCE → BENEFIT (dark navy) -->
-
-<section class="section-dark">
-  <div class="wrap">
-    <div class="eyebrow-light">Experience → Your Benefit</div>
-    <h2 class="sec-title-light">What this career <em>means for yours</em></h2>
-    <p class="sec-sub-light">Every chapter of this professional journey translates directly into something you gain at MechTech — from core design skills to research pathways and global career doors.</p>
-    <div class="xb-grid">
-      <div class="xb-card"><div class="xb-exp-label">His Experience</div><div class="xb-exp-text">Over a decade designing plastic &amp; sheet metal components for Volvo &amp; Mack trucks across multiple global OEMs</div><span class="xb-arrow">↓</span><div class="xb-benefit-label">Your Benefit</div><div class="xb-benefit-text">You learn CAD and component design the way Tier-1 automotive companies actually do it — draft analysis, DFM principles, and tooling feasibility built in from day one.</div></div>
-      <div class="xb-card"><div class="xb-exp-label">His Experience</div><div class="xb-exp-text">Led full GA layout, seating systems, and ambulance variants at Force Motors from scratch to production</div><span class="xb-arrow">↓</span><div class="xb-benefit-label">Your Benefit</div><div class="xb-benefit-text">You understand complete product development — packaging, fitment trials, cross-functional coordination, and sign-off processes companies expect you to know from day one.</div></div>
-      <div class="xb-card"><div class="xb-exp-label">His Experience</div><div class="xb-exp-text">Worked onsite at Volvo Greensboro, USA — inside global engineering and PLM workflows</div><span class="xb-arrow">↓</span><div class="xb-benefit-label">Your Benefit</div><div class="xb-benefit-text">Guidance on what overseas employers in the USA, Middle East, and Europe actually look for — from someone who has lived and worked there, not from a consultancy.</div></div>
-      <div class="xb-card"><div class="xb-exp-label">His Experience</div><div class="xb-exp-text">NASA MUREP-funded research during Master's — a federally sponsored aerospace project at a US university</div><span class="xb-arrow">↓</span><div class="xb-benefit-label">Your Benefit</div><div class="xb-benefit-text">Real guidance on finding and applying for funded research programs — grants, assistantships, and industry-sponsored projects. The founder has navigated that path.</div></div>
-      <div class="xb-card"><div class="xb-exp-label">His Experience</div><div class="xb-exp-text">M.S. at University of North Texas — navigating US university systems, scholarships, and academic culture as an international student</div><span class="xb-arrow">↓</span><div class="xb-benefit-label">Your Benefit</div><div class="xb-benefit-text">Honest, practical advice on pursuing an MS abroad — shortlisting, SOP writing, funding. From someone who did it, not a consultancy trying to sell you a service.</div></div>
-      <div class="xb-card"><div class="xb-exp-label">His Experience</div><div class="xb-exp-text">Co-authored publications, international conference presentations, and academic-industry collaboration</div><span class="xb-arrow">↓</span><div class="xb-benefit-label">Your Benefit</div><div class="xb-benefit-text">Guidance on research collaborations, contributing to ongoing projects, and building an academic profile that opens doors to research roles and further study.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- THE GAP (tinted bg) -->
-
-<section class="section-tint">
-  <div class="wrap">
-    <div class="eyebrow">The Gap MechTech Closes</div>
-    <h2 class="sec-title">What college <em>doesn't prepare</em> you for</h2>
-    <p class="sec-sub">Years and years inside industry made one thing unmistakably clear — the exact skills that separate hired engineers from overlooked ones. MechTech is built around closing every one of them.</p>
-    <div class="gap-grid">
-      <div class="gap-col">
-        <h3>❌ What Most Graduates Lack</h3>
-        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Industry-standard CAD workflows</strong>College teaches modelling. Industry expects DFM-aware design, master sections, B-side features, and tooling feasibility checks.</div></div>
-        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Working knowledge of GD&amp;T</strong>Most graduates can define it. Very few can apply tolerances under real production constraints.</div></div>
-        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Product lifecycle understanding</strong>Colleges teach design. They rarely teach proto builds, fitment trials, and sign-off procedures.</div></div>
-        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>PLM &amp; documentation skills</strong>ENOVIA, Windchill, SOR preparation — standard in OEMs, almost never taught in college.</div></div>
-        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Global career awareness</strong>Most graduates don't know how to position themselves for overseas roles, funded research, or international MS programs.</div></div>
-      </div>
-      <div class="gap-col">
-        <h3>✅ What MechTech Builds in You</h3>
-        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>OEM-level CAD practice</strong>Hands-on projects modelled after real industry briefs — with proper design intent and manufacturing considerations.</div></div>
-        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>Applied GD&amp;T skills</strong>You read, create, and interpret production drawings the way engineers actually use them on the job.</div></div>
-        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>End-to-end product development</strong>Concept to sign-off — the full cycle, including the steps colleges skip entirely.</div></div>
-        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>PLM awareness &amp; documentation</strong>Working knowledge that most fresh engineers take years to learn on the job.</div></div>
-        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>A roadmap beyond the local job market</strong>Guidance on overseas opportunities, funded research, and MS programs from a founder who has personally navigated all three.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- SKILLS (light bg) -->
-
-<section class="section-light">
-  <div class="wrap">
-    <div class="eyebrow">What He Teaches — &amp; Why He Can</div>
-    <h2 class="sec-title">Every module <em>traced to real experience</em></h2>
-    <p class="sec-sub">Every topic taught at MechTech is one that was used on the job — repeatedly — not a curriculum someone else wrote.</p>
-    <div class="skills-grid">
-      <div class="skill-card"><div class="sk-icon">📐</div><div class="sk-title">CAD Modeling &amp; Design</div><div class="sk-origin">Volvo Eicher &amp; Force Motors — decades on real vehicles</div><div class="sk-desc">Decades of CAD work across automotive OEMs — teaching design intent and industry habits that textbooks never develop.</div><div class="sk-benefit">You build components the way OEMs expect — not just shapes on a screen.</div><div class="sk-tags"><span class="sk-tag">SolidWorks</span><span class="sk-tag">CATIA V5</span><span class="sk-tag">Creo</span><span class="sk-tag">AutoCAD</span></div></div>
-      <div class="skill-card"><div class="sk-icon">📏</div><div class="sk-title">Engineering Drawing &amp; GD&amp;T</div><div class="sk-origin">DVP &amp; SOR preparation across multiple OEM projects</div><div class="sk-desc">Mastered through years of 2D detailing, drawing reviews, and supplier communication on real production components.</div><div class="sk-benefit">You learn to read and write the language of manufacturing — fluently.</div><div class="sk-tags"><span class="sk-tag">GD&amp;T</span><span class="sk-tag">Drafting</span><span class="sk-tag">Master Sections</span></div></div>
-      <div class="skill-card"><div class="sk-icon">🏗️</div><div class="sk-title">Manufacturing Processes</div><div class="sk-origin">Force Motors production &amp; NASA composites research</div><div class="sk-desc">Hands-on experience with injection moulding, sheet metal, FRP, vacuum forming, and composites in live environments.</div><div class="sk-benefit">You understand how parts are actually made — not just how they are drawn.</div><div class="sk-tags"><span class="sk-tag">DFM</span><span class="sk-tag">DFA</span><span class="sk-tag">Plastics</span><span class="sk-tag">Composites</span></div></div>
-      <div class="skill-card"><div class="sk-icon">⚙️</div><div class="sk-title">Product Development Lifecycle</div><div class="sk-origin">Full project ownership at Force Motors &amp; Volvo Eicher</div><div class="sk-desc">Concept to production sign-off across multiple vehicle platforms — the complete picture of how products go from idea to road.</div><div class="sk-benefit">You can walk into any product development role and understand the full picture immediately.</div><div class="sk-tags"><span class="sk-tag">PLM</span><span class="sk-tag">ENOVIA</span><span class="sk-tag">Windchill</span></div></div>
-      <div class="skill-card"><div class="sk-icon">🔍</div><div class="sk-title">Quality, Validation &amp; DVP</div><div class="sk-origin">Proto builds, fitment trials, SOR sign-offs at multiple OEMs</div><div class="sk-desc">Prepared SORs and DVPs, managed fitment trials, and validated components across M1/M2 vehicles and commercial trucks.</div><div class="sk-benefit">You understand quality and validation from week one — not two years into your role.</div><div class="sk-tags"><span class="sk-tag">DVP</span><span class="sk-tag">SOR</span><span class="sk-tag">Homologation</span></div></div>
-      <div class="skill-card"><div class="sk-icon">🎯</div><div class="sk-title">Interview &amp; Career Readiness</div><div class="sk-origin">Decades working alongside and observing engineering hiring</div><div class="sk-desc">Having been part of engineering environments where talent is assessed and onboarded, the founder knows what panels are really looking for.</div><div class="sk-benefit">You go into interviews knowing exactly what to say and how to present your work.</div><div class="sk-tags"><span class="sk-tag">Resume</span><span class="sk-tag">Mock Interviews</span><span class="sk-tag">Portfolio</span></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- AWARDS (light bg) -->
+<!-- AWARDS — unique to this page -->
 
 <section class="section-light">
   <div class="wrap" style="padding-top:56px;padding-bottom:56px">
@@ -326,54 +192,16 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL (tinted bg) -->
-
-<section class="section-tint">
-  <div class="wrap" style="padding-top:56px;padding-bottom:56px">
-    <div class="eyebrow">Student Results</div>
-    <h2 class="sec-title">What <em>students say</em></h2>
-    <p class="sec-sub">The first batch is launching soon. Student outcomes and testimonials will be featured here as they happen.</p>
-    <div class="test-box">
-      <div class="t-icon">💬</div>
-      <p><strong>This space will be filled by your story.</strong><br>When MechTech students land their first roles, crack interviews, or build portfolios that impress — those results will appear here. Be part of the founding batch.</p>
-    </div>
-  </div>
-</section>
-
-<!-- BEYOND BORDERS (tinted bg) -->
-
-<section class="section-tint">
-  <div class="wrap" style="padding-top:0">
-    <div class="eyebrow">Beyond the Job — Bigger Horizons</div>
-    <h2 class="sec-title">Doors most training institutes <em>can't open</em></h2>
-    <p class="sec-sub">Because the founder has navigated funded research, international study, and global careers first-hand, MechTech can guide you toward opportunities that go well beyond a local placement.</p>
-    <div class="exp-grid">
-      <div class="exp-card"><div class="exp-icon">🔬</div><div class="exp-title">Funded Research Projects</div><div class="exp-desc">The founder worked on a NASA MUREP-funded project. Real guidance on identifying and applying for funded research programs in India and abroad, including government grants, industry R&amp;D, and university assistantships.</div><div class="exp-tags"><span class="exp-tag">NASA MUREP</span><span class="exp-tag">Research Grants</span><span class="exp-tag">Assistantships</span></div></div>
-      <div class="exp-card"><div class="exp-icon">🌍</div><div class="exp-title">Overseas Job Opportunities</div><div class="exp-desc">Having worked onsite at Volvo USA and studied in the US, the founder understands what overseas employers actually look for — and how to position your profile for opportunities in the Middle East, Europe, and North America.</div><div class="exp-tags"><span class="exp-tag">Middle East</span><span class="exp-tag">USA</span><span class="exp-tag">Europe</span><span class="exp-tag">OEM Careers</span></div></div>
-      <div class="exp-card"><div class="exp-icon">🎓</div><div class="exp-title">International MS Programs</div><div class="exp-desc">Navigating an MS abroad — university shortlisting, SOP writing, scholarships, and life as an international student — was lived first-hand. Guidance from experience, not a consultancy script.</div><div class="exp-tags"><span class="exp-tag">MS Admissions</span><span class="exp-tag">Scholarships</span><span class="exp-tag">SOP Guidance</span></div></div>
-      <div class="exp-card"><div class="exp-icon">📄</div><div class="exp-title">Research Collaborations &amp; Publications</div><div class="exp-desc">With international conference presentations and a co-authored publication in review, the founder can guide students in building a research profile — finding collaboration opportunities and publishing work that opens academic and industry doors.</div><div class="exp-tags"><span class="exp-tag">Publications</span><span class="exp-tag">Conferences</span><span class="exp-tag">Collaborations</span></div></div>
-      <div class="exp-card"><div class="exp-icon">🏭</div><div class="exp-title">Global OEM Career Pathways</div><div class="exp-desc">Decades inside Volvo's global engineering network provides insight into how large OEMs across India, USA, and Europe hire internationally — and how to build a career trajectory toward those roles.</div><div class="exp-tags"><span class="exp-tag">Volvo</span><span class="exp-tag">Automotive OEMs</span><span class="exp-tag">Global Teams</span></div></div>
-      <div class="exp-card"><div class="exp-icon">🧭</div><div class="exp-title">Personalised Career Roadmapping</div><div class="exp-desc">Whether your ambition is a local design role, an overseas job, an MS program, or a research career — the founder can help you map a realistic, specific path from where you are to where you want to go.</div><div class="exp-tags"><span class="exp-tag">Mentorship</span><span class="exp-tag">Career Planning</span><span class="exp-tag">Goal Setting</span></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
 
 <section class="cta-banner">
-  <h2>Your ambition deserves a bigger roadmap.</h2>
-  <p>Whether your goal is a local design role, an overseas opportunity, funded research, or an MS abroad — MechTech gives you the skills, the guidance, and the connections to get there.</p>
-  <div class="cta-chips">
-    <span class="cta-chip">🎓 Final Year Students</span>
-    <span class="cta-chip">📄 Fresh Graduates</span>
-    <span class="cta-chip">🛠️ Diploma Holders</span>
-    <span class="cta-chip">🌍 Overseas Aspirants</span>
-    <span class="cta-chip">🔬 Research Enthusiasts</span>
+  <h2>Ready to learn from someone who has actually been there?</h2>
+  <p>Explore the programs or get in touch to find the right path for your goals.</p>
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative">
+    <a href="programs.html" class="btn-gold">Explore Programs →</a>
+    <a href="contact.html" class="btn-outline">Get in Touch</a>
   </div>
-  <a href="programs.html" class="btn-gold">Explore Programs →</a>
 </section>
-
-<!-- FOOTER -->
 
 <footer class="footer">
   <div class="footer-grid">
@@ -383,12 +211,10 @@
   </div>
   <div class="footer-bottom"><div class="footer-copy">© 2025 MechTech Careers · Founded by Sameer Abass</div><div class="footer-copy">mechtechcareers.github.io</div></div>
 </footer>
-
 <script>
-  window.addEventListener('scroll',()=>{ document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20); });
-  function toggleNav(){ document.getElementById('navToggle').classList.toggle('open'); document.getElementById('navMobile').classList.toggle('open'); }
-  document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>{ document.getElementById('navToggle').classList.remove('open'); document.getElementById('navMobile').classList.remove('open'); }));
+  window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+  function toggleNav(){document.getElementById('navToggle').classList.toggle('open');document.getElementById('navMobile').classList.toggle('open')}
+  document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navToggle').classList.remove('open');document.getElementById('navMobile').classList.remove('open')}));
 </script>
-
 </body>
 </html>

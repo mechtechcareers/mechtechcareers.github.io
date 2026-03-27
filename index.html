@@ -8,126 +8,104 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="nav.css">
 <style>
-  /* ── HERO (dark navy — same as about.html hero) ── */
-  .hero { background: #0D1B2A; padding: 100px 64px 80px; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(21,87,160,0.25), transparent 60%); pointer-events: none; }
-  .hero-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center; position: relative; z-index: 2; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #C9A84C; font-weight: 600; margin-bottom: 24px; animation: fadeUp 0.6s ease both; }
-  .hero-tag::before { content: ''; width: 22px; height: 2px; background: #C9A84C; }
-  .hero-h1 { font-family: 'Playfair Display', serif; font-size: clamp(44px,5.5vw,72px); font-weight: 900; line-height: 1.05; color: #ffffff; margin-bottom: 24px; animation: fadeUp 0.6s 0.1s ease both; }
-  .hero-h1 em { color: #C9A84C; font-style: normal; display: block; }
-  .hero-sub { font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 520px; margin-bottom: 40px; animation: fadeUp 0.6s 0.2s ease both; }
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
-  .hero-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; overflow: hidden; animation: fadeUp 0.6s 0.4s ease both; }
-  .h-stat { background: rgba(255,255,255,0.05); padding: 24px 20px; text-align: center; }
-  .h-stat-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-  .h-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.80); text-transform: uppercase; letter-spacing: 1px; line-height: 1.3; }
+  .hero{background:#0D1B2A;padding:100px 64px 80px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(21,87,160,0.25),transparent 60%);pointer-events:none}
+  .hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;position:relative;z-index:2}
+  .hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:600;margin-bottom:24px;animation:fadeUp 0.6s ease both}
+  .hero-tag::before{content:'';width:22px;height:2px;background:#C9A84C}
+  .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(44px,5.5vw,72px);font-weight:900;line-height:1.05;color:#ffffff;margin-bottom:24px;animation:fadeUp 0.6s 0.1s ease both}
+  .hero-h1 em{color:#C9A84C;font-style:normal;display:block}
+  .hero-sub{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.7;max-width:520px;margin-bottom:40px;animation:fadeUp 0.6s 0.2s ease both}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;animation:fadeUp 0.6s 0.4s ease both}
+  .h-stat{background:rgba(255,255,255,0.05);padding:24px 20px;text-align:center}
+  .h-stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#C9A84C;line-height:1;margin-bottom:6px}
+  .h-stat-lbl{font-size:11px;color:rgba(255,255,255,0.80);text-transform:uppercase;letter-spacing:1px;line-height:1.3}
 
-/* ── WHO IS THIS FOR (tinted bg — same as .gap-bg in about.html) ── */
-.audience-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
-.audience-card { background: #FFFFFF; border: 1px solid #D1DCE8; border-top: 3px solid #1557A0; border-radius: 0 0 8px 8px; padding: 28px 22px; transition: border-top-color 0.3s, transform 0.3s, box-shadow 0.3s; }
-.audience-card:hover { border-top-color: #B8860B; transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-.ac-icon { font-size: 28px; margin-bottom: 14px; }
-.ac-title { font-size: 15px; font-weight: 700; color: #0D1B2A; margin-bottom: 8px; }
-.ac-desc { font-size: 13px; color: #374151; line-height: 1.6; }
+/* WHO IS THIS FOR */
+.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.audience-card{background:#FFFFFF;border:1px solid #D1DCE8;border-top:3px solid #1557A0;border-radius:0 0 8px 8px;padding:28px 22px;transition:border-top-color 0.3s,transform 0.3s,box-shadow 0.3s}
+.audience-card:hover{border-top-color:#B8860B;transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.ac-icon{font-size:28px;margin-bottom:14px}
+.ac-title{font-size:15px;font-weight:700;color:#0D1B2A;margin-bottom:8px}
+.ac-desc{font-size:13px;color:#374151;line-height:1.6}
 
-/* ── WHY MECHTECH (light bg — same as wrap sections in about.html) ── */
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.why-title { font-family: ‘Playfair Display’, serif; font-size: clamp(28px,3.5vw,40px); font-weight: 700; color: #0D1B2A; line-height: 1.2; margin-bottom: 20px; }
-.why-title em { color: #1A7BC4; font-style: normal; }
-.why-body p { font-size: 15.5px; color: #374151; line-height: 1.8; margin-bottom: 16px; }
-.why-points { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
-.why-point { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: #EEF4FA; border-radius: 6px; border-left: 3px solid #1557A0; }
-.why-point-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-.why-point-title { font-size: 14.5px; font-weight: 700; color: #0D1B2A; margin-bottom: 2px; }
-.why-point-desc { font-size: 13.5px; color: #374151; line-height: 1.55; }
+/* THE GAP */
+.gap-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.gap-col h3{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;color:#0D1B2A;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #D1DCE8}
+.gap-item{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid #D1DCE8}
+.gap-item:last-child{border-bottom:none}
+.gap-dot-red{width:8px;height:8px;border-radius:50%;background:#DC2626;flex-shrink:0;margin-top:6px}
+.gap-dot-green{width:8px;height:8px;border-radius:50%;background:#1A7A5E;flex-shrink:0;margin-top:6px}
+.gap-item-text{font-size:14px;color:#374151;line-height:1.55}
+.gap-item-text strong{color:#0D1B2A;display:block;font-size:14px;margin-bottom:2px}
 
-/* ── FOUNDER CARD (dark card — same as hero-panel in about.html) ── */
-.founder-card { background: #0D1B2A; border-radius: 10px; overflow: hidden; }
-.founder-card-photo { width: 100%; height: 280px; background: linear-gradient(135deg, #1557A0, #0D3A6A); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.founder-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.founder-card-initials { font-family: ‘Playfair Display’, serif; font-size: 64px; font-weight: 700; color: rgba(255,255,255,0.15); }
-.founder-card-body { padding: 28px 28px 32px; }
-.founder-card-name { font-family: ‘Playfair Display’, serif; font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
-.founder-card-role { font-size: 12px; color: #C9A84C; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
-.founder-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.fc-tag { font-size: 11px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); padding: 5px 12px; border-radius: 20px; }
-.founder-card-link { display: inline-flex; align-items: center; gap: 8px; color: #C9A84C; font-size: 13.5px; font-weight: 600; text-decoration: none; transition: gap 0.2s; }
-.founder-card-link:hover { gap: 12px; }
+/* WHY MECHTECH */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-title{font-family:‘Playfair Display’,serif;font-size:clamp(28px,3.5vw,40px);font-weight:700;color:#0D1B2A;line-height:1.2;margin-bottom:20px}
+.why-title em{color:#1A7BC4;font-style:normal}
+.why-body p{font-size:15.5px;color:#374151;line-height:1.8;margin-bottom:16px}
+.why-points{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.why-point{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:#EEF4FA;border-radius:6px;border-left:3px solid #1557A0}
+.why-point-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.why-point-title{font-size:14.5px;font-weight:700;color:#0D1B2A;margin-bottom:2px}
+.why-point-desc{font-size:13.5px;color:#374151;line-height:1.55}
+.founder-card{background:#0D1B2A;border-radius:10px;overflow:hidden}
+.founder-card-photo{width:100%;height:280px;background:linear-gradient(135deg,#1557A0,#0D3A6A);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.founder-card-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.founder-card-initials{font-family:‘Playfair Display’,serif;font-size:64px;font-weight:700;color:rgba(255,255,255,0.15)}
+.founder-card-body{padding:28px 28px 32px}
+.founder-card-name{font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;color:#ffffff;margin-bottom:4px}
+.founder-card-role{font-size:12px;color:#C9A84C;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;font-weight:600}
+.founder-card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.fc-tag{font-size:11px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);padding:5px 12px;border-radius:20px}
+.founder-card-link{display:inline-flex;align-items:center;gap:8px;color:#C9A84C;font-size:13.5px;font-weight:600;text-decoration:none;transition:gap 0.2s}
+.founder-card-link:hover{gap:12px}
 
-/* ── PROGRAMS (dark navy — same as .xb-bg in about.html) ── */
-.prog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 40px; }
-.prog-card { background: rgba(255,255,255,0.04); padding: 32px 28px; border-top: 3px solid rgba(255,255,255,0.08); transition: background 0.3s, border-color 0.3s; text-decoration: none; display: block; }
-.prog-card:hover { background: rgba(255,255,255,0.08); border-top-color: #C9A84C; }
-.prog-icon { font-size: 28px; margin-bottom: 16px; }
-.prog-name { font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px; line-height: 1.3; }
-.prog-desc { font-size: 13px; color: rgba(255,255,255,0.80); line-height: 1.6; margin-bottom: 16px; }
-.prog-link { font-size: 12px; color: #C9A84C; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-.prog-more { grid-column: 1/-1; background: rgba(201,168,76,0.08); border: 1px dashed rgba(201,168,76,0.35); padding: 24px; text-align: center; text-decoration: none; display: block; transition: background 0.3s; }
-.prog-more:hover { background: rgba(201,168,76,0.14); }
-.prog-more span { font-size: 14px; color: #C9A84C; font-weight: 600; }
+/* PROGRAMS */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
+.prog-card{background:rgba(255,255,255,0.04);padding:32px 28px;border-top:3px solid rgba(255,255,255,0.08);transition:background 0.3s,border-color 0.3s;text-decoration:none;display:block}
+.prog-card:hover{background:rgba(255,255,255,0.08);border-top-color:#C9A84C}
+.prog-icon{font-size:28px;margin-bottom:16px}
+.prog-name{font-size:16px;font-weight:700;color:#ffffff;margin-bottom:8px;line-height:1.3}
+.prog-desc{font-size:13px;color:rgba(255,255,255,0.80);line-height:1.6;margin-bottom:16px}
+.prog-link{font-size:12px;color:#C9A84C;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.prog-more{grid-column:1/-1;background:rgba(201,168,76,0.08);border:1px dashed rgba(201,168,76,0.35);padding:24px;text-align:center;text-decoration:none;display:block;transition:background 0.3s}
+.prog-more:hover{background:rgba(201,168,76,0.14)}
+.prog-more span{font-size:14px;color:#C9A84C;font-weight:600}
 
-/* ── BEYOND STRIP (blue — same as .bridge-banner in about.html) ── */
-.beyond-strip { background: #1557A0; padding: 64px; }
-.beyond-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.beyond-title { font-family: ‘Playfair Display’, serif; font-size: clamp(24px,3vw,34px); font-weight: 700; color: #ffffff; line-height: 1.2; margin-bottom: 16px; }
-.beyond-body { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 28px; }
-.beyond-items { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.beyond-item { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #ffffff; background: rgba(255,255,255,0.12); padding: 12px 14px; border-radius: 6px; font-weight: 500; }
-.beyond-item span { font-size: 18px; }
+/* TESTIMONIAL */
+.test-box{background:#FFFFFF;border:1px dashed #D1DCE8;border-radius:8px;padding:48px;max-width:640px;margin:0 auto;text-align:center}
+.test-icon{font-size:32px;margin-bottom:16px}
+.test-box p{font-size:15.5px;color:#374151;line-height:1.7}
+.test-box strong{color:#0D1B2A}
 
-/* ── TESTIMONIAL (tinted bg) ── */
-.test-box { background: #FFFFFF; border: 1px dashed #D1DCE8; border-radius: 8px; padding: 48px; max-width: 640px; margin: 0 auto; text-align: center; }
-.test-icon { font-size: 32px; margin-bottom: 16px; }
-.test-box p { font-size: 15.5px; color: #3D4A5C; line-height: 1.7; }
-.test-box strong { color: #0D1B2A; }
+/* CTA */
+.cta-banner{background:#0D1B2A;padding:80px 64px;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(21,87,160,0.35),transparent 65%);pointer-events:none}
+.cta-banner h2{font-family:‘Playfair Display’,serif;font-size:clamp(28px,4vw,44px);color:#ffffff;margin-bottom:16px;position:relative}
+.cta-banner p{font-size:17px;color:rgba(255,255,255,0.85);max-width:520px;margin:0 auto 36px;line-height:1.7;position:relative}
+.cta-chips{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:36px;position:relative}
+.cta-chip{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);border-radius:40px;padding:8px 20px;font-size:13px;color:rgba(255,255,255,0.90)}
 
-/* ── CTA BANNER (dark navy — same as .cta-bg in about.html) ── */
-.cta-banner { background: #0D1B2A; padding: 80px 64px; text-align: center; position: relative; overflow: hidden; }
-.cta-banner::before { content: ‘’; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(21,87,160,0.35), transparent 65%); pointer-events: none; }
-.cta-banner h2 { font-family: ‘Playfair Display’, serif; font-size: clamp(28px,4vw,44px); color: #ffffff; margin-bottom: 16px; position: relative; }
-.cta-banner p { font-size: 17px; color: rgba(255,255,255,0.85); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
-.cta-chips { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; position: relative; }
-.cta-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 40px; padding: 8px 20px; font-size: 13px; color: rgba(255,255,255,0.90); }
-
-@media(max-width:960px) {
-.hero { padding: 72px 28px 56px; }
-.hero-inner { grid-template-columns: 1fr; }
-.hero-stats { grid-template-columns: repeat(2,1fr); }
-.audience-grid { grid-template-columns: 1fr 1fr; }
-.why-grid { grid-template-columns: 1fr; }
-.prog-grid { grid-template-columns: 1fr 1fr; }
-.beyond-strip { padding: 48px 28px; }
-.beyond-inner { grid-template-columns: 1fr; }
-.beyond-items { grid-template-columns: 1fr; }
-.cta-banner { padding: 64px 28px; }
+@media(max-width:960px){
+.hero{padding:72px 28px 56px}.hero-inner{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(2,1fr)}
+.audience-grid{grid-template-columns:1fr 1fr}.gap-grid,.why-grid{grid-template-columns:1fr}
+.prog-grid{grid-template-columns:1fr 1fr}.cta-banner{padding:64px 28px}
 }
-@media(max-width:580px) {
-.audience-grid, .prog-grid { grid-template-columns: 1fr; }
-}
+@media(max-width:580px){.audience-grid,.prog-grid{grid-template-columns:1fr}}
 </style>
 
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-brand">Mech<span>Tech</span> Careers</a>
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="contact.html" class="nav-cta">Contact Us</a>
-  </div>
+  <div class="nav-links"><a href="index.html" class="active">Home</a><a href="about.html">About</a><a href="programs.html">Programs</a><a href="contact.html" class="nav-cta">Contact Us</a></div>
   <div class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About the Founder</a>
-  <a href="programs.html">Programs</a>
-  <a href="contact.html" class="nav-cta">Contact Us</a>
+  <a href="index.html" class="active">Home</a><a href="about.html">About the Founder</a><a href="programs.html">Programs</a><a href="contact.html" class="nav-cta">Contact Us</a>
 </div>
-
-<!-- HERO -->
 
 <section class="hero">
   <div class="hero-inner">
@@ -135,10 +113,7 @@
       <div class="hero-tag">MechTech Careers</div>
       <h1 class="hero-h1">Train with someone<br>who has <em>actually been there.</em></h1>
       <p class="hero-sub">Industry-ready training in mechanical design, CAD, and manufacturing — taught by a professional with decades of experience at Volvo, Force Motors, and NASA-funded research. Not classroom theory. The real thing.</p>
-      <div class="hero-btns">
-        <a href="programs.html" class="btn-gold">Explore Programs →</a>
-        <a href="about.html" class="btn-outline">Meet the Founder</a>
-      </div>
+      <div class="hero-btns"><a href="programs.html" class="btn-gold">Explore Programs →</a><a href="about.html" class="btn-outline">Meet the Founder</a></div>
     </div>
     <div>
       <div class="hero-stats">
@@ -151,8 +126,6 @@
   </div>
 </section>
 
-<!-- WHO IS THIS FOR -->
-
 <section class="section-tint">
   <div class="wrap">
     <div class="eyebrow">Who It's For</div>
@@ -161,26 +134,52 @@
     <div class="audience-grid">
       <div class="audience-card"><div class="ac-icon">🎓</div><div class="ac-title">Final Year Students</div><div class="ac-desc">Build industry skills before graduation so you're not starting from zero on day one of your job.</div></div>
       <div class="audience-card"><div class="ac-icon">📄</div><div class="ac-title">Fresh Graduates</div><div class="ac-desc">Your degree gets you the interview. MechTech training gets you the job — and keeps you there.</div></div>
-      <div class="audience-card"><div class="ac-icon">🛠️</div><div class="ac-title">Diploma Holders</div><div class="ac-desc">Gain the practical skills and industry confidence that make companies take your application seriously.</div></div>
-      <div class="audience-card"><div class="ac-icon">🌍</div><div class="ac-title">Overseas Aspirants</div><div class="ac-desc">Get guidance on overseas jobs, MS programs, and funded research from someone who has navigated all three.</div></div>
+      <div class="audience-card"><div class="ac-icon">🛠️</div><div class="ac-title">Diploma Holders</div><div class="ac-desc">Gain the practical skills and confidence that make companies take your application seriously.</div></div>
+      <div class="audience-card"><div class="ac-icon">🌍</div><div class="ac-title">Overseas Aspirants</div><div class="ac-desc">Guidance on overseas jobs, MS programs, and funded research from someone who has navigated all three.</div></div>
     </div>
   </div>
 </section>
 
-<!-- WHY MECHTECH -->
+<section class="section-light">
+  <div class="wrap">
+    <div class="eyebrow">The Problem</div>
+    <h2 class="sec-title">What college <em>doesn't prepare</em> you for</h2>
+    <p class="sec-sub">Years inside industry made one thing unmistakably clear — the exact skills that separate hired engineers from overlooked ones. MechTech is built to close every one of them.</p>
+    <div class="gap-grid">
+      <div class="gap-col">
+        <h3>❌ What Most Graduates Lack</h3>
+        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Industry-standard CAD workflows</strong>College teaches modelling. Industry expects DFM-aware design, master sections, and tooling feasibility checks.</div></div>
+        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Applied GD&T knowledge</strong>Most graduates can define it. Very few can apply tolerances under real production constraints.</div></div>
+        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Product lifecycle understanding</strong>Colleges teach design. They rarely teach proto builds, fitment trials, and sign-off procedures.</div></div>
+        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>PLM &amp; documentation skills</strong>ENOVIA, Windchill, SOR preparation — standard in OEMs, almost never taught in college.</div></div>
+        <div class="gap-item"><div class="gap-dot-red"></div><div class="gap-item-text"><strong>Global career awareness</strong>Most graduates don't know how to position themselves for overseas roles or MS programs.</div></div>
+      </div>
+      <div class="gap-col">
+        <h3>✅ What MechTech Builds in You</h3>
+        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>OEM-level CAD practice</strong>Hands-on projects modelled after real industry briefs — with proper design intent and manufacturing considerations.</div></div>
+        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>Applied GD&T skills</strong>You read, create, and interpret production drawings the way engineers use them on the job.</div></div>
+        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>End-to-end product development</strong>Concept to sign-off — the full cycle, including the steps colleges skip entirely.</div></div>
+        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>PLM awareness &amp; documentation</strong>Working knowledge that most fresh engineers take years to learn on the job.</div></div>
+        <div class="gap-item"><div class="gap-dot-green"></div><div class="gap-item-text"><strong>A roadmap beyond the local job market</strong>Guidance on overseas opportunities, funded research, and MS programs.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
 
 <section class="section-light">
   <div class="wrap">
     <div class="why-grid">
       <div class="why-body">
         <div class="eyebrow">Why MechTech</div>
-        <h2 class="why-title">The training institute that <em>closes the gap</em></h2>
+        <h2 class="why-title">Training that comes from <em>inside the industry</em></h2>
         <p>Most engineering graduates leave college with strong theory and weak practice. Companies don't have time to train fresh hires from scratch — they expect you to hit the ground running.</p>
-        <p>MechTech Careers was built by someone who spent decades on the other side of that table — designing real products, managing real teams, and watching fresh graduates struggle with skills that should have been taught years earlier.</p>
+        <p>MechTech Careers was built by someone who spent decades on the other side — designing real products at Volvo and Force Motors, managing real teams, and watching graduates struggle with skills that should have been taught years earlier.</p>
         <div class="why-points">
           <div class="why-point"><div class="why-point-icon">📐</div><div><div class="why-point-title">Taught from real OEM experience</div><div class="why-point-desc">Every module comes from actual project work at Volvo Eicher and Force Motors — not a textbook.</div></div></div>
           <div class="why-point"><div class="why-point-icon">🌍</div><div><div class="why-point-title">Global perspective built in</div><div class="why-point-desc">Overseas jobs, MS programs, funded research — guidance most training institutes cannot offer.</div></div></div>
-          <div class="why-point"><div class="why-point-icon">🎯</div><div><div class="why-point-title">Career outcomes, not just certificates</div><div class="why-point-desc">The goal is your first job, your first promotion, and your long-term career.</div></div></div>
+          <div class="why-point"><div class="why-point-icon">🎯</div><div><div class="why-point-title">Career outcomes, not just certificates</div><div class="why-point-desc">The goal is your first job, your first promotion, and your long-term career trajectory.</div></div></div>
         </div>
       </div>
       <div>
@@ -191,14 +190,9 @@
           </div>
           <div class="founder-card-body">
             <div class="founder-card-name">Sameer Abass</div>
-            <div class="founder-card-role">Founder & Lead Trainer</div>
-            <div class="founder-card-tags">
-              <span class="fc-tag">Volvo Eicher</span>
-              <span class="fc-tag">Force Motors</span>
-              <span class="fc-tag">NASA Research</span>
-              <span class="fc-tag">M.S. USA</span>
-            </div>
-            <a href="about.html" class="founder-card-link">Read full founder story →</a>
+            <div class="founder-card-role">Founder &amp; Lead Trainer</div>
+            <div class="founder-card-tags"><span class="fc-tag">Volvo Eicher</span><span class="fc-tag">Force Motors</span><span class="fc-tag">NASA Research</span><span class="fc-tag">M.S. USA</span></div>
+            <a href="about.html" class="founder-card-link">Read the full founder story →</a>
           </div>
         </div>
       </div>
@@ -208,45 +202,21 @@
 
 <div class="divider"></div>
 
-<!-- PROGRAMS -->
-
 <section class="section-dark">
   <div class="wrap">
     <div class="eyebrow-light">Programs</div>
     <h2 class="sec-title-light">Five pathways to <em>industry readiness</em></h2>
-    <p class="sec-sub-light">Each program is built around real industry expectations — not academic syllabi.</p>
+    <p class="sec-sub-light">Each program is built around real industry expectations — not academic syllabi. Choose one or combine them based on your goal.</p>
     <div class="prog-grid">
       <a href="programs.html#mechanical-design" class="prog-card"><div class="prog-icon">📐</div><div class="prog-name">Mechanical Design Program</div><div class="prog-desc">End-to-end product design — from concept to production-ready components using industry-standard workflows.</div><div class="prog-link">Learn more →</div></a>
       <a href="programs.html#cad" class="prog-card"><div class="prog-icon">💻</div><div class="prog-name">CAD Professional Program</div><div class="prog-desc">Master SolidWorks, CATIA V5, and Creo the way companies actually use them — not just basic tutorials.</div><div class="prog-link">Learn more →</div></a>
       <a href="programs.html#manufacturing" class="prog-card"><div class="prog-icon">🏗️</div><div class="prog-name">Manufacturing Industry Readiness</div><div class="prog-desc">Plastics, sheet metal, FRP, DFM, DFA — manufacturing knowledge that bridges design and the factory floor.</div><div class="prog-link">Learn more →</div></a>
-      <a href="programs.html#quality" class="prog-card"><div class="prog-icon">🔍</div><div class="prog-name">Production & Quality Engineering</div><div class="prog-desc">GD&T, DVP, SOR, validation — the quality and documentation skills OEMs expect from day one.</div><div class="prog-link">Learn more →</div></a>
-      <a href="programs.html#mentorship" class="prog-card"><div class="prog-icon">🧭</div><div class="prog-name">Career Mentorship & Overseas Guidance</div><div class="prog-desc">Overseas jobs, MS programs, funded research, publications — a roadmap beyond the local job market.</div><div class="prog-link">Learn more →</div></a>
+      <a href="programs.html#quality" class="prog-card"><div class="prog-icon">🔍</div><div class="prog-name">Production &amp; Quality Engineering</div><div class="prog-desc">GD&T, DVP, SOR, validation — the quality and documentation skills OEMs expect from day one.</div><div class="prog-link">Learn more →</div></a>
+      <a href="programs.html#mentorship" class="prog-card"><div class="prog-icon">🧭</div><div class="prog-name">Career Mentorship &amp; Overseas Guidance</div><div class="prog-desc">Overseas jobs, MS programs, funded research — a roadmap beyond the local job market.</div><div class="prog-link">Learn more →</div></a>
       <a href="programs.html" class="prog-more"><span>View all programs with full details →</span></a>
     </div>
   </div>
 </section>
-
-<!-- BEYOND BORDERS -->
-
-<div class="beyond-strip">
-  <div class="beyond-inner">
-    <div>
-      <h2 class="beyond-title">Doors most training institutes can't open</h2>
-      <p class="beyond-body">Because the founder has personally navigated funded research, international study, and global careers — MechTech can guide you toward opportunities that go well beyond a local placement.</p>
-      <a href="programs.html#mentorship" class="btn-gold">Explore Mentorship Program →</a>
-    </div>
-    <div class="beyond-items">
-      <div class="beyond-item"><span>🔬</span> Funded Research Projects</div>
-      <div class="beyond-item"><span>🌍</span> Overseas Job Guidance</div>
-      <div class="beyond-item"><span>🎓</span> International MS Programs</div>
-      <div class="beyond-item"><span>📄</span> Research & Publications</div>
-      <div class="beyond-item"><span>🏭</span> Global OEM Career Paths</div>
-      <div class="beyond-item"><span>🧭</span> Personal Career Roadmap</div>
-    </div>
-  </div>
-</div>
-
-<!-- TESTIMONIALS -->
 
 <section class="section-tint">
   <div class="wrap">
@@ -260,22 +230,12 @@
   </div>
 </section>
 
-<!-- CTA -->
-
 <section class="cta-banner">
   <h2>Your ambition deserves a bigger roadmap.</h2>
   <p>Whether your goal is a local design role, an overseas opportunity, funded research, or an MS abroad — MechTech gives you the skills, the guidance, and the connections to get there.</p>
-  <div class="cta-chips">
-    <span class="cta-chip">🎓 Final Year Students</span>
-    <span class="cta-chip">📄 Fresh Graduates</span>
-    <span class="cta-chip">🛠️ Diploma Holders</span>
-    <span class="cta-chip">🌍 Overseas Aspirants</span>
-    <span class="cta-chip">🔬 Research Enthusiasts</span>
-  </div>
+  <div class="cta-chips"><span class="cta-chip">🎓 Final Year Students</span><span class="cta-chip">📄 Fresh Graduates</span><span class="cta-chip">🛠️ Diploma Holders</span><span class="cta-chip">🌍 Overseas Aspirants</span></div>
   <a href="contact.html" class="btn-gold">Get in Touch →</a>
 </section>
-
-<!-- FOOTER -->
 
 <footer class="footer">
   <div class="footer-grid">
@@ -285,12 +245,10 @@
   </div>
   <div class="footer-bottom"><div class="footer-copy">© 2025 MechTech Careers · Founded by Sameer Abass</div><div class="footer-copy">mechtechcareers.github.io</div></div>
 </footer>
-
 <script>
-  window.addEventListener('scroll',()=>{ document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20); });
-  function toggleNav(){ document.getElementById('navToggle').classList.toggle('open'); document.getElementById('navMobile').classList.toggle('open'); }
-  document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>{ document.getElementById('navToggle').classList.remove('open'); document.getElementById('navMobile').classList.remove('open'); }));
+  window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+  function toggleNav(){document.getElementById('navToggle').classList.toggle('open');document.getElementById('navMobile').classList.toggle('open')}
+  document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navToggle').classList.remove('open');document.getElementById('navMobile').classList.remove('open')}));
 </script>
-
 </body>
 </html>
